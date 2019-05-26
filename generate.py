@@ -95,9 +95,10 @@ syscalls = [
 ]
 
 # choose a number between 1 (write) and 60 (exit), and add the address of our "hello world"
-choices = [1, 60, 'message', 'messagelen']
-# list(range(1, 61))
-# choices.append('message')
+# choices = [1, 60, 'message', 'messagelen']
+choices =  list(range(1, 61))
+choices.append('message')
+choices.append('messagelen')
 
 
 def choose_register_positon(instruction):
