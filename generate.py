@@ -116,10 +116,12 @@ def call_with_operands(instruction):
     register_position = choose_register_positon(instruction)
     parts = [instruction['name']]
     if register_position[0]:
-        parts.append(random.choice(registers)+',')
+        parts.append(random.choice(registers))
     if register_position[1]:
+        parts[1] += ','
         parts.append(random.choice(registers))
     elif register_position[1] is False:
+        parts[1] += ','
         parts.append(str(random.choice(choices)))
     return parts
         

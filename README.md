@@ -10,3 +10,12 @@ We'll be using docker to build and run the system.
 We need to disable some security features to be able to run gdb properly
 
 docker run -it -v `pwd`:/opt/ --cap-add=SYS_PTRACE --security-opt seccomp=unconfined nasm /bin/bash
+
+## to run
+nasm -f elf64 -F dwarf -g $name.asm
+ld $name.o
+gdb a.out -batch \
+  -ex "set logging on" \
+  -ex r \
+  -ex "bt full" \
+  -ex quit
