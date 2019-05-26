@@ -2,7 +2,6 @@ import random
 import os
 import string
 NUM_LINES = 30
-FILENAME_LEN = 20
 # these are not the complete
 # set of x86_64 registers
 registers = [

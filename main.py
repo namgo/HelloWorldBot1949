@@ -4,6 +4,7 @@ import docker
 import logging
 
 NUM_FILES = 10
+FILENAME_LEN = 20
 
 current_path = os.path.dirname(os.path.realpath(__file__))
 build_dir = current_path + '/output'
