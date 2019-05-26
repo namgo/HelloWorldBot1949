@@ -130,13 +130,20 @@ def generate_line():
     return ' '.join(call_with_operands(random.choice(instructions)))
 
 
-asm = '''global _start
+def generate_asm():
+    return '''
+global _start
 section .text
-_start: {}
+_start: 
+{}
 section .data
 message: db "Hello World", 10
-messagelen: equ $ - message'''.format('\n'.join([generate_line() for i in range(0, NUM_LINES)]))
-filename = ''.join(random.choice(string.ascii_lowercase + string.digits) for _ in range(FILENAME_LEN)) + '.asm'
+messagelen: equ $ - message
+'''.format('\n'.join([generate_line() for i in range(0, NUM_LINES)]))
 
-with open(filename, 'w') as f:
-    f.write(asm)
+    ''' 
+    filename = ''.join(random.choice(string.ascii_lowercase + string.digits) for _ in range(FILENAME_LEN)) + '.asm'
+    with open(filename, 'w') as f:
+        print('writing to {}'.format(filename))
+        f.write(asm)
+    '''
