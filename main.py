@@ -1,4 +1,5 @@
 from generate import generate_asm
+import random
 import os
 import docker
 import logging
