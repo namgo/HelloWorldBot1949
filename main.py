@@ -16,6 +16,6 @@ image = client.images.build(path=current_path, tag='nasm_builder')
 
 container = client.containers.create(
     image=image, command='/bin/bash', name='hwb_build',
-    cap_add='SYS_PTRACE', security_opt='seccomp:unconfined'
+    cap_add='SYS_PTRACE', security_opt=['seccomp:unconfined']
 )
 container.start()
