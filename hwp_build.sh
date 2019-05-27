@@ -1,8 +1,8 @@
 #!/bin/bash
 
-$output_dir = '/build'
-$build = 'nasm -f elf64 -F dwarf -g'
-$link = 'ld -o'
+output_dir='/build'
+build='nasm -f elf64 -F dwarf -g'
+link='ld -o'
 # $gdb_cmd = 'gdb a.out -batch -ex "set logging on" -ex r -ex "bt full" -ex "info registers" -ex quit'
 
 cd $output_dir
