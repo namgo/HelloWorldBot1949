@@ -21,17 +21,5 @@ for i in range(0, NUM_FILES):
     with open(build_dir+'/'+filename, 'w') as f:
         f.write(generate_asm())
 
-client = docker.from_env()
-image = client.images.build(path=current_path, tag='nasm_builder')
-
-container = client.containers.create(
-    image='nasm_builder:latest', command='/bin/bash /opt/build_and_run.sh', name='hwb_build',
-    cap_add='SYS_PTRACE', security_opt=['apparmor:unconfined','seccomp:unconfined'],
-    volumes={
-        current_path: {'bind': '/opt', 'mode':'ro'},
-        build_dir: {'bind': '/build', 'mode': 'rw'}
-    }
-)
-container.start()
-container.attach()
-print(container.logs(stdout=True, stderr=True))
+print('''files generated, now please run:
+run_docker.sh''')
