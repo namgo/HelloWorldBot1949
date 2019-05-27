@@ -33,4 +33,5 @@ container = client.containers.create(
     }
 )
 container.start()
+container.attach()
 print(container.logs(stdout=True, stderr=True))
