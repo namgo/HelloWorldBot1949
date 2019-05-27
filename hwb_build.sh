@@ -2,7 +2,7 @@
 
 # $gdb_cmd = 'gdb a.out -batch -ex "set logging on" -ex r -ex "bt full" -ex "info registers" -ex quit'
 
-cd $output_dir
+cd /build
 for f_asm in `ls *.asm`
 do 
     echo "built $f_asm"
