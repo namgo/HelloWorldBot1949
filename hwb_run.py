@@ -49,7 +49,7 @@ for filename in filenames:
 
 q.join()
 
-for i in range(10):
+for i in range(2):
     q.put(None)
 for t in threads:
     t.join()
