@@ -8,7 +8,7 @@ link='ld -o'
 cd $output_dir
 for f_asm in `ls *.asm`
 do 
-    $generic_name = `echo $f_asm | cut -d'.' -f1`
+    generic_name=`echo $f_asm | cut -d'.' -f1`
     `$build $f_asm`
     `$link $generic_name $generic_name.o`
 done
