@@ -1,7 +1,7 @@
 #!/bin/bash
 # build docker image
 echo "building docker image"
-docker build -t nasm_builder
+docker build -t nasm_builder .
 
 echo "building assembly files"
 docker run -dt hwb_build nasm_builder:latest \
