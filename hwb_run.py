@@ -18,7 +18,7 @@ print('processing {} files'.format(len(filenames)))
 
 def run_command(filename):
     cmd = 'gdb {0} -batch -ex "set logging file {0}.output" -ex "set logging on" -ex r -ex "bt full" -ex "info registers" -ex quit'.format(filename)
-    cmd = shlex.shlex(cmd)
+    cmd = shlex.split(cmd)
     data = {
         'timeout_time': TIMEOUT,
         'timeout_hit': False
