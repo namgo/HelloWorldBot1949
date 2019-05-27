@@ -2,7 +2,6 @@ from generate import generate_asm
 import string
 import random
 import os
-import docker
 import logging
 
 NUM_FILES = 20000
