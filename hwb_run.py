@@ -17,6 +17,8 @@ filenames = [filename.split('.')[0] for filename in glob.glob('*.asm')]
 print('processing {} files'.format(len(filenames)))
 
 def run_command(filename):
+    if os.path.isfile(filename+'.output'):
+        return
     cmd = 'gdb {0} -batch -ex "set logging file {0}.output" -ex "set logging on" -ex r -ex "bt full" -ex "info registers" -ex quit'.format(filename)
     cmd = shlex.split(cmd)
     data = {
