@@ -17,7 +17,7 @@ filenames = [filename.split('.')[0] for filename in glob.glob('*.asm')]
 print('processing {} files'.format(len(filenames)))
 
 def run_command(filename):
-    cmd = 'gdb {0} -ex "set logging file /build/{0}.output" -ex "set logging on" -ex r -ex "bt full" -ex "info registers" -ex quit'.format(filename)
+    cmd = 'gdb {0} -batch -ex "set logging file /build/{0}.output" -ex "set logging on" -ex r -ex "bt full" -ex "info registers" -ex quit'.format(filename)
     cmd = shlex.shlex(cmd)
     data = {
         'timeout_time': TIMEOUT,
