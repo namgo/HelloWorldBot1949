@@ -18,7 +18,7 @@ except:
 # generate lots and lots and lots of files
 for i in range(0, NUM_FILES):
     filename = ''.join(random.choice(string.ascii_lowercase + string.digits) for _ in range(FILENAME_LEN)) + '.asm'
-    with open(filename, 'w') as f:
+    with open(build_dir+'/'+filename, 'w') as f:
         f.write(generate_asm())
 
 client = docker.from_env()
