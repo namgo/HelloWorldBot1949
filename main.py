@@ -33,4 +33,4 @@ container = client.containers.create(
     }
 )
 container.start()
-print('done')
+print(container.logs())
