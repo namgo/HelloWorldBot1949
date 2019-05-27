@@ -33,4 +33,4 @@ container = client.containers.create(
     }
 )
 container.start()
-print(container.logs())
+print(container.logs(stdout=True, stderr=True))
