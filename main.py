@@ -5,7 +5,7 @@ import os
 import docker
 import logging
 
-NUM_FILES = 10
+NUM_FILES = 20000
 FILENAME_LEN = 20
 
 current_path = os.path.dirname(os.path.realpath(__file__))
