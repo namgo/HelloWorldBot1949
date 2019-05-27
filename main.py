@@ -28,8 +28,8 @@ container = client.containers.create(
     image='nasm_builder:latest', command='/bin/bash /opt/hwp_build.sh', name='hwb_build',
     cap_add='SYS_PTRACE', security_opt=['apparmor:unconfined','seccomp:unconfined'],
     volumes={
-        current_path: {'bind': '/mnt', 'mode':'ro'},
-        build_dir: {'bind': '/mnt/build', 'mode': 'rw'}
+        current_path: {'bind': '/opt', 'mode':'ro'},
+        build_dir: {'bind': '/build', 'mode': 'rw'}
     }
 )
 container.start()
